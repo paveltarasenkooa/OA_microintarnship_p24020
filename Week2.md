@@ -47,6 +47,7 @@
   - Hospital (Information about hospital – Name, Adress, Contact info, Type, etc.)
   -	Hospital_Type
   - Medical_Transaction (RxNumber, Date_Filled, NDC, Days_Supply, Patient_id, Total_Cost, Transaction_Fee, Copay_Amount, Payer_Name, Nurse_Id, Doctor_Id)
+     - Please google a bit about NDC
   -	Medical_Caregiver (Pesronal and contact information, Type (Doctor, nurse, etc.))
   - Medical_Caregiver_type
   -	Patient_Event (Date_Time, PatientId, Nurse_Id, Description, ect.)

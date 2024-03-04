@@ -55,9 +55,14 @@
 - ✅ **Add Foreign keys to all tables that should have connections:**
   -[Foreign Key Documentation](https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-foreign-key-relationships?view=sql-server-ver16)
 - ✅ **Populate tables with data:**
-  - Populate all tables except "Medical_Transaction" with data using T-SQL syntax
+  - Populate all tables except "Medical_Transaction" with data using T-SQL syntax [Insert statment documentation](https://learn.microsoft.com/en-us/sql/t-sql/statements/insert-transact-sql?view=sql-server-ver16)
   - Create .CSV document with same structure as "Medical_Transaction" table. You can use MS Excel for this purpose. Please add not less than 5K records
   - Populate table "Medical_Transaction" using [Using SQL Server Management Studio Import CSV Tools](https://learn.microsoft.com/en-us/sql/relational-databases/import-export/import-flat-file-wizard?view=sql-server-ver16) in Ms SQL Managment Studio or [Bulk Insert](https://learn.microsoft.com/en-us/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver16)
+
+## Learn and Experiment
+
+- 🌟 **Try different types of queries:**
+  - Try to run different types of queries on data that was inserted into tables. Try to update/delete records using "WHERE" condition [Where Condition](https://learn.microsoft.com/en-us/sql/t-sql/queries/where-transact-sql?view=sql-server-ver16) / [Update Statement documentation](https://learn.microsoft.com/en-us/sql/t-sql/queries/update-transact-sql?view=sql-server-ver16) / [Delete Statement Documentation](https://learn.microsoft.com/en-us/sql/t-sql/statements/delete-transact-sql?view=sql-server-ver16)
 
 ### Save your work
 - ✅ **Create Script of your database and save to your git repository:**

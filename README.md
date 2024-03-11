@@ -15,6 +15,9 @@ Thank you for participating in this microinternship. Let's create something amaz
   - [Brandon Devereux]
   - [Austin Li]
   - [Phillip Lee]
+- Students Trello Boards
+    - [Phillip Lee](https://trello.com/b/68P0Rk2x/my-trello-board)
+    - [Austin Li](https://trello.com/b/OS3aMG7W/oa-internship)
 
 ### Additional Resources
 

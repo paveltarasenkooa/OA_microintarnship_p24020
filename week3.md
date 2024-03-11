@@ -59,9 +59,30 @@ Visual Studio simplifies the process of scaffolding your database context and mo
   ```
   This command generates the DbContext and entity models based on your database schema.
 
+If you are getting error doing this from Visual Studio you can try to do next:
+
+  - Open your terminal or command prompt.
+
+  - Navigate to the root directory of your project.
+
+  - Run the following command to scaffold the DbContext and entity classes:
+
+ ```powershell
+    dotnet ef dbcontext scaffold "YourConnectionString" Microsoft.EntityFrameworkCore.SqlServer -o Mod
+ ```
+
 ## 5. Add the DbContext to the Services Container
 
+
+- **Add Connection String to `appsettings.json`**
+     ```json
+      "ConnectionStrings": {
+    "DefaultConnection":"Server=tcp:{YourServerName}.database.windows.net,1433;Initial Catalog={YourDatabaseName};Persist Security Info=False;User ID={YorUserId};Password={YourPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection 
+    Timeout=30;"
+  }
+    ```
 - **Open `Startup.cs` or `Program.cs`** (depending on your project template version) to configure the services.
+
 - **Register DbContext**:
   - For `Startup.cs`, locate the `ConfigureServices` method and add:
     ```csharp
@@ -73,6 +94,7 @@ Visual Studio simplifies the process of scaffolding your database context and mo
     builder.Services.AddDbContext<YourDbContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("YourConnectionStringName")));
     ```
+
 
 ## 6. Add a Controller and View
 

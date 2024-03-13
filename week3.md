@@ -124,3 +124,92 @@ If you are getting error doing this from Visual Studio you can try to do next:
 - Visual Studio will open your default web browser and navigate to your application's home page.
 
 By following these instructions, you've leveraged Visual Studio Community Edition to create, develop, and run a .NET Core ASP.NET MVC application using the Database-First approach. Visual Studio provides a comprehensive development environment with powerful features for managing databases, editing code, debugging, and more, enhancing your productivity as a developer.
+
+
+
+# Spring Web Application with Database-First Approach
+
+This guide provides instructions for creating a web application using the Spring Framework, focusing on a database-first approach. It assumes you're starting with an existing database schema and will guide you through setting up your development environment, creating a new Spring Boot project, configuring database connectivity, generating domain classes, implementing repositories, and developing REST controllers.
+
+## 1. Setup Development Environment
+
+### Java Development Kit (JDK)
+- Install JDK 11 or newer.
+- Verify the installation by running `java -version` and `javac -version`.
+
+### Integrated Development Environment (IDE)
+- Download and install an IDE that supports Spring (e.g., Spring Tool Suite (STS), IntelliJ IDEA, Eclipse).
+
+### Maven
+- Ensure Maven is installed and configured (often included with IDEs). Verify with `mvn -version`.
+
+### Database Connectivity
+- Install necessary database drivers or clients for your database (e.g., MySQL, PostgreSQL).
+
+## 2. Create a New Spring Boot Project
+
+1. Go to [Spring Initializr](https://start.spring.io/).
+2. Fill in the project metadata (Group, Artifact, Name, Description).
+3. Select the latest stable Spring Boot version.
+4. Add dependencies: `Spring Web`, `Spring Data JPA`, database driver (e.g., `MySQL Driver`).
+5. Generate and unzip the project. Import it into your IDE.
+
+## 3. Configure Database Connectivity
+
+In `src/main/resources/application.properties` or `application.yml`, add:
+
+```properties
+spring.datasource.url=jdbc:your_database_url_here
+spring.datasource.username=your_database_username
+spring.datasource.password=your_database_password
+spring.datasource.driver-class-name=org.your_db_driver_class_here
+spring.jpa.hibernate.ddl-auto=none
+```
+
+## 4. Generate Domain Classes
+
+### Manually
+- Create entity classes that correspond to your database tables, using JPA annotations for mappings.
+
+### Automatically
+- Use tools like JPA Buddy (IntelliJ IDEA) or Spring Roo for automatic generation based on your schema.
+
+## 5. Implement Repositories
+
+For each entity, create an interface extending `JpaRepository` or `CrudRepository`:
+
+```java
+import org.springframework.data.jpa.repository.JpaRepository;
+import your.package.model.YourEntity;
+
+public interface YourEntityRepository extends JpaRepository<YourEntity, Long> {
+    // Custom methods
+}
+```
+
+## 6. Develop REST Controllers
+
+Create controllers with `@RestController` and define mappings for CRUD operations using `@GetMapping`, `@PostMapping`, etc.:
+
+```java
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import your.package.model.YourEntity;
+import your.package.repository.YourEntityRepository;
+
+@RestController
+@RequestMapping("/api/your-entity")
+public class YourEntityController {
+
+    @Autowired
+    private YourEntityRepository repository;
+
+    // CRUD endpoints
+}
+```
+
+## 7. Run Your Application
+
+- Execute the `main` method in your `@SpringBootApplication` class to start.
+- Test your endpoints via REST client or browser.
+

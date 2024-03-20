@@ -162,5 +162,30 @@ public List<HospitalWithPatientCount> getAllHospitalsWithPatientCounts() {
     return hospitalRepository.findHospitalWithPatientCounts();
 }
 ```
+# Using approach of T-SQL View
+Instead of using custom queries from code of your application you can create View on side of sql server where you can collect all the data you need to show on the web page. 
+[Here is some documentation](https://www.w3schools.com/sql/sql_view.asp)
 
+here is the View I have created to show Hospitals and count of patients for each hospital and hospital type: 
+```sql
+
+CREATE  VIEW [dbo].[V_Hospital]
+AS
+
+SELECT 
+a.Id as [HositalId],
+a.Name as [HospitalName],
+ht.Name as [HospitalType],
+MAX(P.DOB) as MAXDOB,
+COUNT(DISTINCT p.ID) as PatientCount
+FROM [dbo].[Hospital] a
+JOIN HospitalType ht on a.HopitalTypeId = ht.Id
+LEFT JOIN Patient p on p.HospitalId = a.Id
+GROUP BY 
+a.Id,
+a.Name,
+ht.Name
+GO
+
+```
 

@@ -20,13 +20,19 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.MapControllers();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+//app.UseEndpoints(endpoints =>
+//{
+//    _ = endpoints.MapControllers(); // This enables attribute routing for controllers.
+//});
 
 app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapRazorPages();
-
+app.UseStaticFiles();
 app.Run();

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OA_Example_Project.Models;
 
 namespace OA_Example_Project.Controllers
@@ -20,9 +21,21 @@ namespace OA_Example_Project.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<VHospital>> GetHospitals()
+        public ActionResult<IEnumerable<VHospital>> GetHospitals(int pageIndex = 0, int pageSize = 10)
         {
-            return _context.VHospitals.ToList();
+            var totalRecords =  _context.VHospitals.Count();
+            var hospitals = _context.VHospitals.Skip((pageIndex - 1) * pageSize)
+                                .Take(pageSize)
+                                .ToList();
+            var response = new
+            {
+                Data = hospitals,
+                TotalRecords = totalRecords,
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                TotalPages = (int)Math.Ceiling(totalRecords / (double)pageSize)
+            };
+            return Ok(response);
         }
     }
 }

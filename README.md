@@ -14,7 +14,7 @@ Thank you for participating in this microinternship. Let's create something amaz
 - Students Repos
   - [Brandon Devereux]
   - [Austin Li]
-  - [Phillip Lee]
+  - [Phillip Lee](https://github.com/philliplee4/Open-Avenue-microinternship)
 - Students Trello Boards
     - [Phillip Lee](https://trello.com/b/68P0Rk2x/my-trello-board)
     - [Austin Li](https://trello.com/b/OS3aMG7W/oa-internship)

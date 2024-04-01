@@ -1,0 +1,35 @@
+﻿@page
+@model OA_Example_Project.Pages.Patient.IndexModel
+@{
+    ViewData["Title"] = "Patients";
+}
+
+<script src="~/js/patient.js"></script>
+<link rel="stylesheet" href="~/css/TableStyle.css" asp-append-version="true" />
+
+<div id="spinner" style="display: none;">
+
+    <img src="/images/zkzg.gif" alt="Loading..." style="max-height:50px" />
+</div>
+<h1 id="hospitalName"></h1>
+<table id="patientsTable" class="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Hospital Name</th>
+            <th>Medical Transactions Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Data will be populated here using JavaScript -->
+    </tbody>
+</table>
+<nav aria-label="Page navigation example">
+    <span id="pageInfo" class="mr-2">Page <span id="currentPage">1</span> of <span id="totalPages">?</span></span>
+    <ul class="pagination">
+        <li class="page-item"><button class="page-link" id="prevPage">Previous</button></li>
+        <li class="page-item"><button class="page-link" id="nextPage">Next</button></li>
+    </ul>
+</nav>
+

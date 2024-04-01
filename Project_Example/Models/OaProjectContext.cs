@@ -26,6 +26,7 @@ public partial class OaProjectContext : DbContext
     public virtual DbSet<PatientType> PatientTypes { get; set; }
 
     public virtual DbSet<VHospital> VHospitals { get; set; }
+    public virtual DbSet<VPatient> VPatients { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -122,6 +123,24 @@ public partial class OaProjectContext : DbContext
                 .HasMaxLength(255)
                 .IsUnicode(false);
             entity.Property(e => e.Maxdob).HasColumnName("MAXDOB");
+        });
+
+        modelBuilder.Entity<VPatient>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("V_Patient");
+
+            entity.Property(e => e.FirstName)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.LastName)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.HospitalName)
+               .HasMaxLength(255)
+               .IsUnicode(false);
+           
         });
 
         OnModelCreatingPartial(modelBuilder);

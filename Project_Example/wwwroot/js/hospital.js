@@ -65,7 +65,7 @@ function populateTable(data) {
 
         cell1.innerHTML = hospital.hospitalName;
         cell2.innerHTML = hospital.hospitalType;
-        cell3.innerHTML = hospital.patientCount;
+        cell3.innerHTML = '<a href="/Patient/Index' + '?hospitalId=' + hospital.hositalId +'">' + hospital.patientCount + '</a>';
     });
 }
 

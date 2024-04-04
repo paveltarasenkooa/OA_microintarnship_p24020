@@ -68,7 +68,7 @@ If you are getting error doing this from Visual Studio you can try to do next:
   - Run the following command to scaffold the DbContext and entity classes:
 
  ```powershell
-    dotnet ef dbcontext scaffold "YourConnectionString" Microsoft.EntityFrameworkCore.SqlServer -o Mod
+    dotnet ef dbcontext scaffold "YourConnectionString" Microsoft.EntityFrameworkCore.SqlServer -o Models
  ```
 
 ## 5. Add the DbContext to the Services Container

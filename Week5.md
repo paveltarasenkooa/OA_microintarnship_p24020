@@ -34,16 +34,23 @@ namespace OA_Example_Project.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<VHospital>>> GetHospitals(int pageIndex = 0, int pageSize = 10)
-        {
-            var query = _context.VHospitals;
-            var totalItems = await query.CountAsync();
-            var items = await query.Skip(pageIndex * pageSize).Take(pageSize).ToListAsync();
-
-            Response.Headers.Add("X-Total-Count", totalItems.ToString());
-            return items;
-        }
+           [HttpGet]
+   public ActionResult<IEnumerable<VHospital>> GetHospitals(int pageIndex = 0, int pageSize = 10)
+   {
+       var totalRecords =  _context.VHospitals.Count();
+       var hospitals = _context.VHospitals.Skip((pageIndex - 1) * pageSize)
+                           .Take(pageSize)
+                           .ToList();
+       var response = new
+       {
+           Data = hospitals,
+           TotalRecords = totalRecords,
+           PageIndex = pageIndex,
+           PageSize = pageSize,
+           TotalPages = (int)Math.Ceiling(totalRecords / (double)pageSize)
+       };
+       return Ok(response);
+   }
     }
 }
 ```

@@ -20,14 +20,14 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
 app.MapControllers();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
-//app.UseEndpoints(endpoints =>
-//{
-//    _ = endpoints.MapControllers(); // This enables attribute routing for controllers.
-//});
 
 app.UseRouting();
 

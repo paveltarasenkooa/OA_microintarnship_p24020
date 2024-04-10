@@ -1,0 +1,32 @@
+﻿@model OA_Example_Project.Models.Patient
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<a class="btn btn-primary" href="/patient/index" role="button">Back</a>
+<form asp-action="Edit">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+         <input type="text" class="form-control" asp-for="FirstName" id="firstName" name="firstName" placeholder="Enter first name" required>
+    </div>
+    </br>
+    <div class="form-group">
+        <label for="firstName">Last Name</label>
+        <input type="text" class="form-control" asp-for="LastName" id="lastName" name="lastName" placeholder="Enter last name" required>
+    </div>
+    </br>
+   <div class="form-group">
+       <label for="patientDOB">Date of Birth</label>
+        <input type="date" class="form-control" asp-for="Dob" id="Dob" name="Dob" required>
+   </div>
+    <div class="form-group">
+        <label for="hospital">Hospital</label>
+        <select class="form-control" asp-for="HospitalId" asp-items="@ViewBag.Hospitals" id="hospital" name="HospitalId">
+            <option value="">Please select a hospital</option>
+        </select>
+    </div>
+   </br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+  
+

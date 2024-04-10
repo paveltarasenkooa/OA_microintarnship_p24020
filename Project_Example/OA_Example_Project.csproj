@@ -17,9 +17,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Pages\Shared\PatientEdit.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\images\ZKZg.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Patient\" />
   </ItemGroup>
 
 </Project>

@@ -13,7 +13,7 @@ Thank you for participating in this microinternship. Let's create something amaz
 - Project leader email: pavel.tarasenko@openavenuesfoundation.org
 - Students Repos
   - [Brandon Devereux]
-  - [Austin Li]
+  - [Austin Li] (https://github.com/austinli356/OA-internship)
   - [Phillip Lee](https://github.com/philliplee4/Open-Avenue-microinternship)
 - Students Trello Boards
     - [Phillip Lee](https://trello.com/b/68P0Rk2x/my-trello-board)

@@ -31,12 +31,12 @@ Discuss why and how they impacted your project.
 ### 4. Innovative Ideas:
 
 Highlight any creative or innovative solutions you inmplemented (if any).
-Explain why dod you choose to implement these ideas.
+Explain why did you choose to implement these ideas.
 
 ### 5. Summary:  
 
 Summarize the outcomes of your project. How well does the web application meet its intended purpose?
 Reflect on what you learned throughout the process. What would you do differently if you were to start over?      
-Conclude with key takeaways from your project. Emphasize any plans for future enhancements or next steps.
+Conclude with key takeaways from your project.
       
       
